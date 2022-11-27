@@ -27,6 +27,7 @@ class Product(db.Model):
     p_price = db.Column(db.Float, nullable=False) #precio
     p_stock = db.Column(db.Integer, nullable=False) #stock
     p_description = db.Column(db.String(120), nullable=False) #descripcion del producto
+    Categoria = db.Column(db.string(200),nullable=False)#Categoria  
     p_brand = db.Column(db.String(120), nullable=False) #marca del producto
     
     def __repr__(self):
