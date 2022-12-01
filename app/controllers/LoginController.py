@@ -17,15 +17,12 @@ def register():
     nombre_usuario = nuevo_usuario['nombre_usuario']
     email = nuevo_usuario['email']
     contrasenha = nuevo_usuario['contrasenha']
-    try:
-        newUser = models.Usuario(name=nombre, phone=telefono, adress=direccion, username=nombre_usuario,
+    newUser = models.Usuario(name=nombre, phone=telefono, adress=direccion, username=nombre_usuario,
                                  email=email, password=contrasenha)
-        db.session.add(newUser)
-        db.session.commit()
-        return jsonify({"respuesta": "Usuario registrado"})
-    except Exception as err:
-        print(err)
-        return jsonify({"respuesta": "El usuario ya existe"})
+    db.session.add(newUser)
+    db.session.commit()
+    return jsonify({"respuesta": "Usuario registrado"})
+
 
 
 # Ruta para pasar los datos de los usuarios de la base de datos al cliente
